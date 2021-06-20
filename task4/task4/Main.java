@@ -32,7 +32,7 @@ public class Main
     }
     
     int max = 0;
-    int n = 720;
+    int n = 721;
     int arr1[] = new int[n];
     for(int i = 0; i <  arr.length / 2; i++)
     {
