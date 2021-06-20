@@ -46,15 +46,16 @@ public class task4
         if (arr1[j] > max){max=arr1[j];}
     }
     int arr2[] = new int[40];int k=0;
+    if (arr1[0] == max){arr2[0] = 0;k++;}
     for(int j = 1;j < arr1.length - 1;j++)
     {
         if (arr1[j] == max){
-            if(arr1[j - 1] !=max || arr1[j + 1] != max){arr2[k]=j;k++;}}
-        if (arr1[0] == max){arr2[0] = 0;}
-        if (arr1[arr1.length - 1] == max){arr2[k - 1] = arr1[arr1.length - 1];}
+        if(arr1[j - 1] !=max || arr1[j + 1] != max){arr2[k]=j;k++;}}
     }
+    if (arr1[arr1.length - 1] == max){arr2[k - 1] = arr1.length - 1;}
     int p=0;
-    while(arr2[p] != 0) 
-    {System.out.printf("%d:%02d %d:%02d\n",(8 + (int)arr2[p]/60),arr2[p]%60,(8 + (int)(arr2[p+1]+1)/60),(arr2[p+1]+1)%60);p=p + 2;}
+    while(arr2[p] != 0 || arr2[p + 1] != 0) 
+    {   
+        System.out.printf("%d:%02d %d:%02d\n",(8 + (int)arr2[p]/60),arr2[p]%60,(8 + (int)(arr2[p+1]+1)/60),(arr2[p+1]+1)%60);p=p + 2;}
    }
 }
